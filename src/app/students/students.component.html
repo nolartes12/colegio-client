@@ -1,0 +1,56 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand">Estudiantes</a>
+        <form class="d-flex" (ngSubmit)="findById()">
+            <input class="form-control m-1" type="number" [(ngModel)]="buscar" [ngModelOptions]="{ standalone: true }">
+            <button class="btn btn-outline-dark m-1">Search</button>
+        </form>
+    </div>
+</nav>
+
+<table class="table table-striped table-hover ">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Email</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Activo</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of estudiantes; let aux = index">
+            <th scope="row">{{ i.id }}</th>
+            <td>{{ i.nombre }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.edad }}</td>
+            <td>{{ i.sexo }}</td>
+            <td>{{ i.activo }}</td>
+            <td>
+                <!-- <button class="btn btn-outline-primary" id="btn-actions"><i class="icon ion-md-arrow-forward"></i></button> -->
+                <button class="btn btn-outline-dark" id="btn-actions"><i class="icon ion-md-create"></i></button>
+                <button type="submit" (click)="deleteById(i.id)" class="btn btn-outline-danger" id="btn-actions">
+                    <i class="icon ion-md-trash"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="modal fade" [ngClass]="{'show': show}">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+            </div>
+            <div class="modal-body">
+                Se han eliminado las matrículas del estudiante xxx.
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" data-bs-dismiss="modal" (click)="show = false">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

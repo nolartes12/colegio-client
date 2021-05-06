@@ -1,0 +1,12 @@
+#sidebar {
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+#sidebar .logo {
+    padding: 1.25rem 1.25rem;
+}
+
+.content {
+    padding: 0 !important;
+}

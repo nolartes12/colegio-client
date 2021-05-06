@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="row row-col-2">
+    <div class="col-2 bg-dark" id="sidebar">
+
+      <div class="logo">
+        <h3 class="text-light">School Client</h3>
+      </div>
+
+      <nav class="nav flex-column">
+        <a class="nav-link d-block text-light p-3 border-bottom border-light" href="/students"><i class="icon ion-md-people mr-2 lead"></i> Estudiantes</a>
+        <a class="nav-link d-block text-light p-3 border-bottom border-light" href="/parents"><i class="icon ion-md-person mr-2 lead"></i> Acudientes</a>
+        <a class="nav-link d-block text-light p-3 border-bottom border-light" href="/enrollments"><i class="icon ion-md-school mr-2 lead"></i> Matrículas</a>
+      </nav>
+    </div>
+
+    <div class="col content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
